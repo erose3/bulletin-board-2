@@ -12,6 +12,8 @@
   Add a new post
 </h2>
 
+
+<% if current_user != nil %>
 <form action="/insert_post" method="post">
   <div>
     <label for="title_box">
@@ -43,6 +45,10 @@
     Add post
   </button>
 </form>
+
+<% else %>
+      <p>You must be <a href ="/users/sign_in">signed in to add a new post.</a></p>
+<% end %>
 
 <hr>
 
